@@ -1,33 +1,49 @@
-#include <stdio.h>
-
-#define DEFAULT_SIZE_STACK 5
 
 typedef struct {
     int32_t capacity;
     int32_t top;
-    void* data;
+    int32_t* data;
 } stack;
 
 stack* newStack() {
+    const int32_t size_of_capacity = 5;
 
+    stack* stk = (stack*)malloc(sizeof(stack));
+    stk->capacity = size_of_capacity;
+    stk->top = -1;
+    stk->data = (int32_t*)malloc(stk->capacity * sizeof(int32_t));
+
+    return stk;
 }
 
-bool_t DoubleCapacity(stack* ) {
-
+void freeStack(stack* stk) {
+    free(stk->data);
+    free(stk);
 }
 
-void* StackPop(stack* ) {
-
+bool_t DoubleCapacity(stack* stk) {
+    return false;
 }
 
-void* StackPeek() {
-
+int32_t StackPop(stack* stk) {
+    int32_t data = stk->data[top];
+    --top;
+    return data;
 }
 
-void StackPush(void* data) {
+int32_t StackPeek(stack* stk) {
+    return stk->data[top];
+}
 
+void StackPush(int32_ data) {
+    ++top;
+    stk->data[top] = data;
 }
 
 bool_t StackEmpty() {
+    return (top == -1);
+}
 
+bool_t ForTest() {
+    return 1;
 }
