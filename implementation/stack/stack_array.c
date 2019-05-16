@@ -52,8 +52,7 @@ void StackPush(stack* stk, char data) {
         }
     }
 
-    ++stk->top;
-    stk->data[stk->top] = data;
+    stk->data[++stk->top] = data;
 }
 
 bool StackEmpty(stack* stk) {
