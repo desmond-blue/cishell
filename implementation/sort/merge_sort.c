@@ -36,7 +36,7 @@ void Merge(int32_t* array, int32_t* helper, int32_t l, int32_t m, int32_t r) {
 }
 
 void main(int argc, char** argv) {
-    printf("main\n");
+    printf("MargeSort\n");
     int32_t array[10] = {55, 56, 100, 1, 3, 4, 10000, 88, 334, 0};
     printf("before sorted: ");
     for (int i = 0; i < 10; i++) {
